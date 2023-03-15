@@ -2,7 +2,7 @@ import ReactDiffViewer from "react-diff-viewer";
 import { Input, Button, message } from "antd";
 import { useRef, useState } from "react";
 
-export default () => {
+export default function Diff() {
   const [oldCode, setOldCode] = useState("");
   const [newCode, setNewCode] = useState("");
   const [messageApi, contextHolder] = message.useMessage();
@@ -84,4 +84,4 @@ export default () => {
       ) : null}
     </div>
   );
-};
+}
