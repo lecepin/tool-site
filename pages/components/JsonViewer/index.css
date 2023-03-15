@@ -1,0 +1,165 @@
+.tool-lp-json-view-App {
+  height: 100%;
+}
+
+.tool-lp-json-view-App-view {
+  height: 100%;
+}
+
+.tool-lp-json-view-App-err {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.tool-lp-json-view-App-err > img {
+  width: 20px;
+  margin-right: 5px;
+}
+
+.tool-lp-json-view-App .react-json-view {
+  font-size: 14px;
+}
+
+.tool-lp-json-view-App-parse-box {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  height: 100%;
+}
+
+.tool-lp-json-view-App-parse-box-edit {
+  width: 30%;
+  overflow: hidden;
+}
+
+.tool-lp-json-view-App-parse-box-edit textarea {
+  resize: none;
+}
+
+.tool-lp-json-view-App-parse-box-drag {
+  width: 15px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: ew-resize;
+  transition: all 0.5s;
+  display: flex;
+  align-items: center;
+  opacity: 0.3;
+}
+
+.tool-lp-json-view-App-parse-box-drag:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+}
+
+.tool-lp-json-view-App-parse-box-drag img {
+  width: 100%;
+  pointer-events: none;
+}
+
+.tool-lp-json-view-App-parse-box-view {
+  width: 0;
+  flex-grow: 1;
+  height: 100%;
+  overflow-y: auto;
+}
+/* .tool-lp-json-view-App-parse-box > div {
+    width: 0;
+    flex-grow: 1;
+  }
+  
+  .tool-lp-json-view-App-parse-box > div:first-child {
+    margin-right: 20px;
+    padding-right: 20px;
+    border-right: 1px dashed;
+  }
+  
+  .tool-lp-json-view-App-parse-box > div:nth-child(2) {
+    flex-grow: 2;
+    margin-right: -20px;
+    height: 100%;
+    overflow-y: auto;
+  } */
+
+.tool-lp-json-view-App-parse-box-textarea {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  outline: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.tool-lp-json-view-App-view-parse {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 40px;
+  cursor: pointer;
+  opacity: 0.2;
+  transition: all 0.5s;
+}
+
+.tool-lp-json-view-App-view-parse:hover {
+  opacity: 1;
+}
+
+.tool-lp-json-view-App-switch {
+  position: fixed;
+  bottom: 15px;
+  right: 110px;
+  opacity: 0.8;
+  display: flex;
+  border: 1px solid #000;
+  font-size: 12px;
+  background-color: #fff;
+  user-select: none;
+  z-index: 999;
+}
+
+.tool-lp-json-view-App-switch > div {
+  margin: 3px;
+  cursor: pointer;
+  padding: 2px;
+}
+
+.tool-lp-json-view-App-switch-active {
+  background-color: #333;
+  color: #fff;
+}
+
+.tool-lp-json-view-App-status {
+  font-size: 14px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  user-select: none;
+}
+
+.tool-lp-json-view-App-github {
+  position: fixed;
+  z-index: 999;
+  right: 20px;
+  bottom: -10px;
+  width: 70px;
+  user-select: none;
+}
+
+.tool-lp-json-view-App-github img {
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.tool-lp-json-view-App-github img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.tool-lp-json-view-App-status select {
+  padding: 3px;
+  font-size: 14px;
+  outline: none;
+}
