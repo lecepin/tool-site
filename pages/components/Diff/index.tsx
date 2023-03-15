@@ -19,6 +19,7 @@ export default function Diff() {
         <Input.TextArea
           className="diff-old"
           placeholder="请输入旧内容"
+          rows={10}
         ></Input.TextArea>
         <Input.TextArea
           className="diff-new"
