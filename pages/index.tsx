@@ -4,11 +4,11 @@ import dynamic from "next/dynamic";
 import { Layout, Menu } from "antd";
 import type { MenuProps } from "antd";
 import { useEffect, useState } from "react";
-import Diff from "@/pages/components/Diff";
+import Diff from "@/components/Diff";
 
 import styles from "@/styles/Home.module.css";
 
-const JsonViewer = dynamic(() => import("@/pages/components/JsonViewer"), {
+const JsonViewer = dynamic(() => import("@/components/JsonViewer"), {
   ssr: false,
 });
 
