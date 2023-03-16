@@ -1,6 +1,6 @@
 import ReactDiffViewer from "react-diff-viewer";
 import { Input, Button, message } from "antd";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 export default function Diff() {
   const [oldCode, setOldCode] = useState("");

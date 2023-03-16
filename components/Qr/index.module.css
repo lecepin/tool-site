@@ -1,0 +1,5 @@
+.upload_list :global(.ant-upload-list) {
+  display: none;
+}
+.decode_result {
+}

@@ -4,23 +4,28 @@ import dynamic from "next/dynamic";
 import { Layout, Menu } from "antd";
 import type { MenuProps } from "antd";
 import { useEffect, useState } from "react";
-import Diff from "@/components/Diff";
 
 import styles from "@/styles/Home.module.css";
 
 const JsonViewer = dynamic(() => import("@/components/JsonViewer"), {
   ssr: false,
 });
+const Qr = dynamic(() => import("@/components/Qr"));
+const Diff = dynamic(() => import("@/components/Diff"));
 
 export default function Home() {
   const menuItems: MenuProps["items"] = [
     {
       key: "diff",
-      label: "Diff",
+      label: "Diff 文本",
     },
     {
       key: "json",
       label: "JSON 查看",
+    },
+    {
+      key: "qr",
+      label: "生成/解析 二维码",
     },
     {
       key: "var-name",
@@ -63,6 +68,7 @@ export default function Home() {
           >
             {menuKey === "diff" ? <Diff /> : null}
             {menuKey === "json" ? <JsonViewer /> : null}
+            {menuKey === "qr" ? <Qr /> : null}
           </Layout.Content>
         </Layout>
       </main>
