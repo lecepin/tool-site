@@ -69,6 +69,16 @@ export default function Home() {
             {menuKey === "diff" ? <Diff /> : null}
             {menuKey === "json" ? <JsonViewer /> : null}
             {menuKey === "qr" ? <Qr /> : null}
+            {menuKey === "var-name" ? (
+              <iframe
+                src="https://fanyi.timymy.com/"
+                style={{
+                  width: "100%",
+                  height: "99%",
+                  border: 0,
+                }}
+              ></iframe>
+            ) : null}
           </Layout.Content>
         </Layout>
       </main>
