@@ -115,6 +115,15 @@ class App extends React.Component<
             <div
               className="tool-lp-json-view-App-parse-box-drag"
               onMouseDown={(e) => this.handleMouseDown(e)}
+              onDoubleClick={(e) => {
+                if (
+                  ["", "block"].includes(this.refEdit?.style?.display ?? "")
+                ) {
+                  this.refEdit!.style.display = "none";
+                } else {
+                  this.refEdit!.style.display = "block";
+                }
+              }}
             >
               <img src="/dragSvg.svg" />
             </div>

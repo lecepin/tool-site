@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import { Layout, Menu } from "antd";
 import type { MenuProps } from "antd";
 import { useEffect, useState } from "react";
+import { GithubOutlined } from "@ant-design/icons";
 
 import styles from "@/styles/Home.module.css";
 
@@ -18,18 +19,27 @@ export default function Home() {
     {
       key: "diff",
       label: "Diff 文本",
+      icon: <img src="/diff.svg" />,
     },
     {
       key: "json",
       label: "JSON 查看",
+      icon: <img src="/json.svg" />,
     },
     {
       key: "qr",
       label: "生成/解析 二维码",
+      icon: <img src="/qr.svg" />,
     },
     {
       key: "var-name",
       label: "生成变量名",
+      icon: <img src="/var.svg" />,
+    },
+    {
+      key: "github",
+      label: "Github",
+      icon: <GithubOutlined />,
     },
   ];
   const [menuKey, setMenuKey] = useState("");
@@ -58,6 +68,11 @@ export default function Home() {
               style={{ height: "100%" }}
               items={menuItems}
               onSelect={({ selectedKeys }) => {
+                if (selectedKeys[0] === "github") {
+                  window.open("https://github.com/lecepin");
+                  return;
+                }
+
                 history.pushState("", "", "?k=" + selectedKeys[0]);
                 setMenuKey(selectedKeys[0]);
               }}

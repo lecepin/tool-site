@@ -46,6 +46,7 @@
   display: flex;
   align-items: center;
   opacity: 0.3;
+  user-select: none;
 }
 
 .tool-lp-json-view-App-parse-box-drag:hover {
