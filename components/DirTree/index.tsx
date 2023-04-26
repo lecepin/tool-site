@@ -230,7 +230,7 @@ export default function Home() {
               ghost
               onClick={() => {
                 (
-                  document.querySelector(".result")! as HTMLTextAreaElement
+                  document.querySelector(style.result)! as HTMLTextAreaElement
                 ).select();
                 document.execCommand("copy");
                 message.success("已复制", 1);
