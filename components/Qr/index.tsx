@@ -15,6 +15,7 @@ import styles from "./index.module.css";
 export default function Qr() {
   const [key, setKey] = useState("generate");
   const [qrImg, setQrImg] = useState("");
+  const [resultValueInput, setResultValueInput] = useState("");
 
   function fileToUint8ArrayAndSize(
     file: File,
@@ -45,11 +46,7 @@ export default function Qr() {
     fileToUint8ArrayAndSize(file, (data, width, height) => {
       const code = JsQr(data, width, height);
 
-      const el = document.querySelector(
-        "." + styles.decode_result
-      ) as HTMLTextAreaElement;
-
-      el.value = code?.data || "";
+      setResultValueInput(code?.data || "");
 
       if (code) {
         message.success("解析成功");
@@ -158,6 +155,10 @@ export default function Qr() {
                   className={styles.decode_result}
                   placeholder="解析结果"
                   style={{ marginTop: 16 }}
+                  value={resultValueInput}
+                  onChange={(e) => {
+                    setResultValueInput(e.target.value);
+                  }}
                 ></Input.TextArea>
               </div>
             ),
