@@ -14,6 +14,7 @@ const JsonViewer = dynamic(() => import("@/components/JsonViewer"), {
 const Qr = dynamic(() => import("@/components/Qr"));
 const Diff = dynamic(() => import("@/components/Diff"));
 const DirTree = dynamic(() => import("@/components/DirTree"));
+const Encode = dynamic(() => import("@/components/Encode"));
 
 export default function Home() {
   const menuItems: MenuProps["items"] = [
@@ -41,6 +42,11 @@ export default function Home() {
       key: "dir-tree",
       label: "目录树",
       icon: <img src="/dir-tree.svg" />,
+    },
+    {
+      key: "encode",
+      label: "编码",
+      icon: <img src="/encode.svg" />,
     },
     {
       key: "github",
@@ -91,6 +97,7 @@ export default function Home() {
             {menuKey === "json" ? <JsonViewer /> : null}
             {menuKey === "qr" ? <Qr /> : null}
             {menuKey === "dir-tree" ? <DirTree /> : null}
+            {menuKey === "encode" ? <Encode /> : null}
             {menuKey === "var-name" ? (
               <iframe
                 src="https://fanyi.timymy.com/"
