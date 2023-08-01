@@ -15,3 +15,18 @@
 .output {
     margin-top: 16px;
 }
+
+.outputImg64 {
+    margin-top: 16px !important;
+}
+
+.outputImgPreview {
+    margin: 16px 0;
+    border: 1px dashed;
+    max-width: 100%;
+    display: none;
+}
+
+.upload_list :global(.ant-upload-list) {
+    display: none;
+}
