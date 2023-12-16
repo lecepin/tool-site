@@ -15,6 +15,7 @@ const Qr = dynamic(() => import("@/components/Qr"));
 const Diff = dynamic(() => import("@/components/Diff"));
 const DirTree = dynamic(() => import("@/components/DirTree"));
 const Encode = dynamic(() => import("@/components/Encode"));
+const UA = dynamic(() => import("@/components/UA"));
 
 export default function Home() {
   const menuItems: MenuProps["items"] = [
@@ -47,6 +48,11 @@ export default function Home() {
       key: "encode",
       label: "编码",
       icon: <img src="/encode.svg" />,
+    },
+    {
+      key: "ua",
+      label: "UA 解析",
+      icon: <img src="/ua.svg" />,
     },
     {
       key: "github",
@@ -93,12 +99,12 @@ export default function Home() {
           <Layout.Content
             style={{ padding: "1rem", minHeight: 280, overflow: "auto" }}
           >
-            {menuKey === "diff" ? <Diff /> : null}
-            {menuKey === "json" ? <JsonViewer /> : null}
-            {menuKey === "qr" ? <Qr /> : null}
-            {menuKey === "dir-tree" ? <DirTree /> : null}
-            {menuKey === "encode" ? <Encode /> : null}
-            {menuKey === "var-name" ? (
+            {menuKey === "diff" && <Diff />}
+            {menuKey === "json" && <JsonViewer />}
+            {menuKey === "qr" && <Qr />}
+            {menuKey === "dir-tree" && <DirTree />}
+            {menuKey === "encode" && <Encode />}
+            {menuKey === "var-name" && (
               <iframe
                 src="https://fanyi.timymy.com/"
                 style={{
@@ -107,7 +113,8 @@ export default function Home() {
                   border: 0,
                 }}
               ></iframe>
-            ) : null}
+            )}
+            {menuKey === "ua" && <UA />}
           </Layout.Content>
         </Layout>
       </main>
