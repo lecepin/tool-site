@@ -5,6 +5,7 @@ import { Layout, Menu } from "antd";
 import type { MenuProps } from "antd";
 import { useEffect, useState } from "react";
 import { GithubOutlined } from "@ant-design/icons";
+import { UAParser } from "ua-parser-js";
 
 import styles from "@/styles/Home.module.css";
 
@@ -61,11 +62,20 @@ export default function Home() {
     },
   ];
   const [menuKey, setMenuKey] = useState("");
+  const [collapsed, setCollapsed] = useState(true);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(location.search);
 
     setMenuKey(urlParams.get("k") || "diff");
+  }, []);
+
+  useEffect(() => {
+    setCollapsed(
+      ["android", "ios"].includes(
+        (UAParser(navigator.userAgent).os.name || "").toLowerCase()
+      )
+    );
   }, []);
 
   return (
@@ -78,7 +88,13 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Layout style={{ height: "100vh" }}>
-          <Layout.Sider width={200} collapsible theme="light">
+          <Layout.Sider
+            width={200}
+            collapsible
+            theme="light"
+            collapsed={collapsed}
+            onCollapse={setCollapsed}
+          >
             <Menu
               mode="inline"
               selectedKeys={[menuKey]}
