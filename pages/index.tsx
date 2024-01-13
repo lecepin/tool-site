@@ -56,6 +56,21 @@ export default function Home() {
       icon: <img src="/ua.svg" />,
     },
     {
+      key: "pdf-m",
+      label: "PDF 合并",
+      icon: <img src="/pdf-m.svg" />,
+    },
+    {
+      key: "svg-p",
+      label: "SVG 压缩",
+      icon: <img src="/svg-p.svg" />,
+    },
+    {
+      key: "img-p",
+      label: "图片 压缩",
+      icon: <img src="/img-p.svg" />,
+    },
+    {
       key: "github",
       label: "Github",
       icon: <GithubOutlined />,
@@ -101,7 +116,7 @@ export default function Home() {
               defaultOpenKeys={[]}
               style={{ height: "100%" }}
               items={menuItems}
-              onSelect={({ selectedKeys }) => {
+              onSelect={({ selectedKeys }: { selectedKeys: string[] }) => {
                 if (selectedKeys[0] === "github") {
                   window.open("https://github.com/lecepin");
                   return;
@@ -120,6 +135,36 @@ export default function Home() {
             {menuKey === "qr" && <Qr />}
             {menuKey === "dir-tree" && <DirTree />}
             {menuKey === "encode" && <Encode />}
+            {menuKey === "pdf-m" && (
+              <iframe
+                src="https://lecepin.github.io/OfflinePDFCombiner/"
+                style={{
+                  width: "100%",
+                  height: "99%",
+                  border: 0,
+                }}
+              ></iframe>
+            )}
+            {menuKey === "svg-p" && (
+              <iframe
+                src="https://jakearchibald.github.io/svgomg/"
+                style={{
+                  width: "100%",
+                  height: "99%",
+                  border: 0,
+                }}
+              ></iframe>
+            )}
+            {menuKey === "img-p" && (
+              <iframe
+                src="https://squoosh.app/"
+                style={{
+                  width: "100%",
+                  height: "99%",
+                  border: 0,
+                }}
+              ></iframe>
+            )}
             {menuKey === "var-name" && (
               <iframe
                 src="https://fanyi.timymy.com/"
