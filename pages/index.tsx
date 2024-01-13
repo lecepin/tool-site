@@ -109,6 +109,7 @@ export default function Home() {
             theme="light"
             collapsed={collapsed}
             onCollapse={setCollapsed}
+            className={styles.menu}
           >
             <Menu
               mode="inline"

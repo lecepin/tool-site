@@ -1,7 +1,7 @@
 .main {
 }
 
-.main .ant-layout-sider-children {
+.menu > :first-child {
   overflow: auto;
 }
 
