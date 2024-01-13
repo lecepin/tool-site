@@ -1,6 +1,10 @@
 .main {
 }
 
+.main .ant-layout-sider-children {
+  overflow: auto;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
 }
