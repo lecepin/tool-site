@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="zh">
       <Head>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5223225078583939"
-     crossorigin="anonymous"></script>
+     crossOrigin="anonymous"></script>
       </Head>
       <body>
         <Main />
