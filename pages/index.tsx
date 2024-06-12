@@ -190,15 +190,16 @@ export default function Home() {
                   border: 0,
                 }}
               ></iframe>
-              {menuKey === "border" && (
-                <iframe
-                  src="https://lecepin.github.io/image-border/"
-                  style={{
-                    width: "100%",
-                    height: "99%",
-                    border: 0,
-                  }}
-                ></iframe>
+            )}
+            {menuKey === "border" && (
+              <iframe
+                src="https://lecepin.github.io/image-border/"
+                style={{
+                  width: "100%",
+                  height: "99%",
+                  border: 0,
+                }}
+              ></iframe>
             )}
             {menuKey === "ua" && <UA />}
           </Layout.Content>
