@@ -2,6 +2,26 @@ import ReactDiffViewer from "react-diff-viewer";
 import { Input, Button, message } from "antd";
 import { useState } from "react";
 
+function sortObjectKeys(obj: any): any {
+  if (typeof obj !== "object" || obj === null) {
+    return obj;
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map((item) => sortObjectKeys(item));
+  }
+
+  const sortedKeys = Object.keys(obj).sort();
+  const sortedObj = {};
+
+  for (const key of sortedKeys) {
+    // @ts-ignore
+    sortedObj[key] = sortObjectKeys(obj[key]);
+  }
+
+  return sortedObj;
+}
+
 export default function Diff() {
   const [oldCode, setOldCode] = useState("");
   const [newCode, setNewCode] = useState("");
@@ -34,6 +54,34 @@ export default function Diff() {
           padding: "1rem",
         }}
       >
+        <Button
+          type="dashed"
+          style={{ width: 150 }}
+          onClick={() => {
+            const _old = (
+              document.querySelector(".diff-old") as HTMLTextAreaElement
+            ).value;
+            const _new = (
+              document.querySelector(".diff-new") as HTMLTextAreaElement
+            ).value;
+
+            try {
+              const __old = sortObjectKeys(JSON.parse(_old));
+              const __new = sortObjectKeys(JSON.parse(_new));
+
+              (
+                document.querySelector(".diff-old") as HTMLTextAreaElement
+              ).value = JSON.stringify(__old, null, 2);
+              (
+                document.querySelector(".diff-new") as HTMLTextAreaElement
+              ).value = JSON.stringify(__new, null, 2);
+            } catch (error) {
+              messageApi.error("JSON 格式错误");
+            }
+          }}
+        >
+          JSON Sort
+        </Button>
         <Button
           type="primary"
           style={{ width: 150 }}
